@@ -93,6 +93,16 @@ p {
     letter-spacing: 0.5px;
 }
 
+.logo a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.logo a:hover {
+    color: var(--accent-color);
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -106,6 +116,14 @@ p {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+.nav-links a.active::after {
+    width: 100%;
 }
 
 .nav-links a::after {
@@ -241,18 +259,91 @@ section:nth-child(even) {
 }
 
 /* ============================================
-   ABOUT SECTION
+   SECTION PREVIEW CARDS (For Index/Navigation)
    ============================================ */
 
-.about {
-    animation: fade-in-on-scroll 0.8s ease-out both;
+.sections-preview {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
 }
+
+.sections-preview h2 {
+    margin-bottom: 3rem;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.preview-card {
+    background: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fade-in-up 0.8s ease-out;
+}
+
+.preview-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(255, 0, 110, 0.25);
+}
+
+.preview-icon {
+    font-size: 2.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.preview-card h3 {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.preview-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.preview-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.preview-card:hover .preview-link {
+    color: var(--accent-light);
+}
+
+/* ============================================
+   ENHANCED ABOUT SECTION
+   ============================================ */
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
     line-height: 1.8;
+}
+
+.about-content h3 {
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
 }
 
 .about-content p {
@@ -645,8 +736,589 @@ section:nth-child(even) {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   PAGE-SPECIFIC HERO (For non-index pages)
    ============================================ */
+
+.page-hero {
+    margin-top: 80px;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-light) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-hero p {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   LITERATURE REVIEW SECTION STYLING
+   ============================================ */
+
+.literature-section {
+    padding: 3rem 0;
+}
+
+.literature-section.alt {
+    background-color: #0f0f0f;
+}
+
+.lit-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lit-content h4 {
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.lit-content p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.lit-content em {
+    color: var(--accent-light);
+    font-style: italic;
+}
+
+.lit-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.lit-list li {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.lit-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.lit-highlight {
+    background: rgba(255, 0, 110, 0.1);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.lit-highlight strong {
+    color: var(--accent-light);
+}
+
+.conclusion-lit {
+    text-align: center;
+}
+
+/* ============================================
+   METHODOLOGY SECTION STYLING
+   ============================================ */
+
+.methodology-intro {
+    padding: 3rem 0;
+}
+
+.method-section {
+    padding: 3rem 0;
+}
+
+.method-section.alt {
+    background-color: #0f0f0f;
+}
+
+.method-subsection {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.method-subsection h3 {
+    color: var(--accent-light);
+    margin-bottom: 1rem;
+}
+
+.method-subsection h4 {
+    color: var(--accent-color);
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.method-subsection p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.method-list {
+    list-style: none;
+    margin: 1rem 0 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.method-list li {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.method-list li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.survey-structure,
+.survey-conditions {
+    background: rgba(255, 0, 110, 0.08);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    border-left: 3px solid var(--accent-light);
+}
+
+.survey-structure h4,
+.survey-conditions h4 {
+    color: var(--accent-light);
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   FINDINGS & CASE STUDIES STYLING
+   ============================================ */
+
+.findings-overview {
+    padding: 3rem 0;
+}
+
+.findings-section {
+    padding: 3rem 0;
+}
+
+.findings-section.alt {
+    background-color: #0f0f0f;
+}
+
+.case-study-card {
+    background: var(--secondary-color);
+    border-left: 4px solid var(--accent-color);
+    padding: 2rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.case-image-large {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-color) 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.case-study-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.case-detail {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.case-detail:last-child {
+    border-bottom: none;
+}
+
+.case-detail h4 {
+    color: var(--accent-light);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.case-detail p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.case-list {
+    list-style: none;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.case-list li {
+    color: var(--text-light);
+    margin-bottom: 0.7rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.case-list li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.case-insight {
+    background: rgba(255, 0, 110, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    color: var(--accent-light);
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.case-insight strong {
+    color: var(--accent-light);
+}
+
+.data-visualization {
+    margin-top: 3rem;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.synthesis-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.synthesis-list {
+    list-style: decimal;
+    margin-left: 2rem;
+    color: var(--text-light);
+}
+
+.synthesis-list li {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* ============================================
+   CONCLUSION SECTION STYLING
+   ============================================ */
+
+.conclusion-section {
+    padding: 3rem 0;
+}
+
+.conclusion-section.alt {
+    background-color: #0f0f0f;
+}
+
+.question-box {
+    background: rgba(255, 0, 110, 0.1);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+.question-box p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.question-box strong {
+    color: var(--accent-light);
+}
+
+.answer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.answer-content h3 {
+    color: var(--text-light);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.answer-section {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.answer-section h4 {
+    color: var(--accent-light);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.answer-section p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.answer-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.answer-list li {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.answer-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.contribution {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border-top: 3px solid var(--accent-color);
+}
+
+.contribution h3 {
+    color: var(--accent-light);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.contribution p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+.limitation {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.limitation h3 {
+    color: var(--accent-light);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.limitation-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.limitation-list li {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.limitation-list li::before {
+    content: '◦';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.future-direction {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--accent-light);
+}
+
+.future-direction h3 {
+    color: var(--accent-light);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.future-direction p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+.implication {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.implication h3 {
+    color: var(--accent-light);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.implication p {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+.implication p strong {
+    color: var(--accent-light);
+}
+
+.reflection-box {
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(247, 37, 133, 0.05) 100%);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.reflection-box p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.reflection-box p:last-child {
+    margin-bottom: 0;
+}
+
+.reflection-box strong {
+    color: var(--accent-light);
+}
+
+/* ============================================
+   WORKS CITED STYLING
+   ============================================ */
+
+.works-cited-section {
+    padding: 3rem 0;
+}
+
+.citation-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.citation-category {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.citation-category h3 {
+    color: var(--accent-light);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.citation-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.citation-list li {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.7;
+}
+
+.citation-list li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.citation-list em {
+    color: var(--accent-light);
+}
+
+.citation-note-box {
+    background: rgba(255, 0, 110, 0.08);
+    border-left: 3px solid var(--accent-light);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+}
+
+.citation-note-box p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+.abstract-takeaway {
+    background: rgba(255, 0, 110, 0.1);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+    color: var(--text-light);
+}
+
+.abstract-takeaway strong {
+    color: var(--accent-light);
+}
 
 @media (max-width: 768px) {
     .nav-links {

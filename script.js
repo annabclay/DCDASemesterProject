@@ -1,35 +1,30 @@
 // ============================================
-// SMOOTH SCROLLING & NAVIGATION
+// NAVIGATION & PAGE INITIALIZATION
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    initializeSmoothScroll();
+    updateActiveNav();
     observeAnimations();
+    addCardInteractivity();
+    addDataVisualizationInteractivity();
 });
 
-// Smooth scrolling for navigation links
-function initializeSmoothScroll() {
+// Update active navigation link based on current page
+function updateActiveNav() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+        link.classList.remove('active');
+        if (link.getAttribute('href') === currentPage || 
+            (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            link.classList.add('active');
+        }
     });
 }
 
 // ============================================
-// SCROLL ANIMATIONS
+// SCROLL ANIMATIONS - IMPROVED
 // ============================================
 
 function observeAnimations() {
@@ -47,8 +42,8 @@ function observeAnimations() {
         });
     }, observerOptions);
 
-    // Observe all cards and sections
-    document.querySelectorAll('.method-card, .case-card, .finding, .data-chart').forEach(el => {
+    // Observe cards, sections, and preview elements
+    document.querySelectorAll('.method-card, .case-card, .finding, .data-chart, .preview-card, .method-subsection, .case-study-card, .contribution, .limitation, .future-direction, .implication').forEach(el => {
         el.style.opacity = '0';
         observer.observe(el);
     });
@@ -64,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function addCardInteractivity() {
-    const cards = document.querySelectorAll('.case-card, .method-card, .finding');
+    const cards = document.querySelectorAll('.case-card, .method-card, .finding, .preview-card');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
