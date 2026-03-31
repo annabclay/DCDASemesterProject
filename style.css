@@ -720,6 +720,16 @@ section:nth-child(even) {
     color: var(--text-muted);
 }
 
+.footer p {
+    margin: 0.5rem 0;
+}
+
+.footer-credits {
+    font-size: 0.85rem;
+    color: var(--accent-light);
+    font-weight: 500;
+}
+
 /* ============================================
    ANIMATIONS
    ============================================ */
