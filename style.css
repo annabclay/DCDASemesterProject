@@ -201,6 +201,28 @@ p {
     font-style: italic;
 }
 
+.research-box {
+    background: rgba(255, 0, 110, 0.15);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.research-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-light);
+    margin-bottom: 0.5rem;
+}
+
+.research-box .hero-question {
+    font-style: normal;
+    margin-bottom: 0;
+}
+
 /* ============================================
    SECTIONS - GENERAL
    ============================================ */
@@ -237,6 +259,26 @@ section:nth-child(even) {
     font-size: 1.1rem;
     color: var(--text-light);
     margin-bottom: 1.5rem;
+}
+
+.hypothesis-banner {
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.2) 0%, rgba(247, 37, 133, 0.1) 100%);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 850px;
+}
+
+.hypothesis-banner p {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.hypothesis-banner strong {
+    color: var(--accent-light);
 }
 
 /* ============================================
