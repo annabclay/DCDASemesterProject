@@ -910,8 +910,8 @@ section:nth-child(even) {
     color: var(--accent-color);
 }
 
-.survey-structure,
-.survey-conditions {
+.comparison-structure,
+.comparison-variables {
     background: rgba(255, 0, 110, 0.08);
     padding: 1.5rem;
     border-radius: 4px;
@@ -919,8 +919,8 @@ section:nth-child(even) {
     border-left: 3px solid var(--accent-light);
 }
 
-.survey-structure h4,
-.survey-conditions h4 {
+.comparison-structure h4,
+.comparison-variables h4 {
     color: var(--accent-light);
     margin-bottom: 0.5rem;
 }
@@ -1009,6 +1009,18 @@ section:nth-child(even) {
     content: '▪';
     position: absolute;
     left: 0;
+    color: var(--accent-color);
+}
+
+.case-list a,
+.citation-list a {
+    color: var(--accent-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.case-list a:hover,
+.citation-list a:hover {
     color: var(--accent-color);
 }
 
