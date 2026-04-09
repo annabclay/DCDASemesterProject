@@ -958,6 +958,48 @@ section:nth-child(even) {
     margin-bottom: 2rem;
 }
 
+.show-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.95), rgba(20, 25, 54, 0.95));
+}
+
+.show-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    padding: 0;
+}
+
+.show-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 18, 38, 0.88) 10%, rgba(15, 18, 38, 0.18) 55%, rgba(15, 18, 38, 0.08) 100%);
+}
+
+.show-banner-title {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.9rem;
+    z-index: 1;
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.65);
+}
+
+
 .show-brand {
     display: inline-block;
     margin-bottom: 0.9rem;
@@ -999,15 +1041,27 @@ section:nth-child(even) {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
+@media (max-width: 700px) {
+    .show-banner {
+        height: 230px;
+    }
+
+    .show-banner-title {
+        font-size: 1.05rem;
+    }
+}
+
 .case-study-card h3 {
     color: var(--accent-color);
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
 }
 
 .case-detail {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -1018,27 +1072,41 @@ section:nth-child(even) {
 .case-detail h4 {
     color: var(--accent-light);
     margin-top: 0;
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
 }
 
 .case-detail p {
     color: var(--text-light);
     margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.82;
+    max-width: 76ch;
+    text-wrap: pretty;
+}
+
+.case-detail p + p {
+    margin-top: 0.35rem;
 }
 
 .case-list {
     list-style: none;
     margin: 1rem 0;
     padding-left: 1.5rem;
+    max-width: 78ch;
 }
 
 .case-list li {
     color: var(--text-light);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.85rem;
     padding-left: 1.5rem;
     position: relative;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    text-wrap: pretty;
 }
 
 .case-list li::before {
@@ -1062,11 +1130,15 @@ section:nth-child(even) {
 
 .case-insight {
     background: rgba(var(--accent-rgb), 0.1);
-    padding: 1rem;
+    padding: 1.05rem 1.15rem;
     border-radius: 4px;
     color: var(--accent-light);
     margin-top: 1.5rem;
     border-left: 3px solid var(--accent-color);
+    line-height: 1.78;
+    font-size: 0.98rem;
+    max-width: 78ch;
+    text-wrap: pretty;
 }
 
 .case-insight strong {
@@ -1076,8 +1148,9 @@ section:nth-child(even) {
 .video-embed {
     position: relative;
     width: 100%;
+    max-width: 720px;
     aspect-ratio: 16 / 9;
-    margin: 1rem 0 1.25rem;
+    margin: 1rem auto 1.25rem;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border-color);
@@ -1089,6 +1162,22 @@ section:nth-child(even) {
     inset: 0;
     width: 100%;
     height: 100%;
+    border: 0;
+}
+
+.reddit-embed {
+    width: 100%;
+    margin: 1rem 0 1.25rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #0f1226;
+}
+
+.reddit-embed iframe {
+    display: block;
+    width: 100%;
+    min-height: 460px;
     border: 0;
 }
 
