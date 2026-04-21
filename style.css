@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap");
 
 /* ============================================
    RESET & BASE STYLES
@@ -23,6 +23,8 @@
   --border-color: #2e3560;
   --font-body: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --font-display: "Syne", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-professional: "Inter", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
   --transition: all 0.3s ease;
 }
 
@@ -962,6 +964,32 @@ section:nth-child(even) {
   padding: 3rem 0;
 }
 
+body.findings-page .page-hero h1,
+body.findings-page .page-hero p,
+body.findings-page h2,
+body.findings-page h3,
+body.findings-page h4,
+body.findings-page p,
+body.findings-page li,
+body.findings-page a {
+  font-family: var(--font-professional);
+}
+
+body.findings-page h2 {
+  letter-spacing: -0.02em;
+}
+
+body.findings-page .findings-section .container {
+  max-width: 1120px;
+}
+
+.findings-overview p {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-muted);
+}
+
 .findings-section {
   padding: 3rem 0;
 }
@@ -972,29 +1000,36 @@ section:nth-child(even) {
 
 .findings-section .container,
 .findings-overview .container {
-  max-width: 1080px;
+  max-width: 1100px;
 }
 
 .case-study-card {
   background: var(--secondary-color);
+  border: 1px solid var(--border-color);
   border-left: 4px solid var(--accent-color);
-  padding: 2.2rem;
-  border-radius: 4px;
-  margin-bottom: 2rem;
-  max-width: 980px;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2.5rem;
+  max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+body.findings-page .case-study-card {
+  display: grid;
+  gap: 1rem;
 }
 
 .show-banner {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 280px;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   border: 1px solid var(--border-color);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   background: linear-gradient(
     135deg,
     rgba(26, 31, 58, 0.95),
@@ -1089,42 +1124,61 @@ section:nth-child(even) {
 
 .case-study-card h3 {
   color: var(--accent-color);
-  margin-bottom: 1.75rem;
-  font-size: 1.3rem;
-  line-height: 1.35;
-  letter-spacing: 0.01em;
-  max-width: 34ch;
+  margin-bottom: 1.2rem;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  max-width: none;
+}
+
+body.findings-page .case-study-card h3 {
+  color: #e5b9ff;
+  font-weight: 700;
+  margin-top: 0.1rem;
 }
 
 .case-detail {
-  margin-bottom: 1.35rem;
-  padding: 1.2rem 1.25rem;
-  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(168, 176, 212, 0.18);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+body.findings-page .case-detail {
+  display: grid;
+  gap: 0.55rem;
 }
 
 .case-detail:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .case-detail h4 {
   color: var(--accent-light);
   margin-top: 0;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.75rem;
   font-size: 1.05rem;
-  line-height: 1.4;
+  line-height: 1.35;
   letter-spacing: 0.01em;
-  text-wrap: balance;
+}
+
+body.findings-page .case-detail h4 {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
 }
 
 .case-detail p {
   color: var(--text-light);
-  margin-bottom: 1.15rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
-  line-height: 1.9;
-  max-width: 68ch;
-  text-wrap: pretty;
+  line-height: 1.75;
+  max-width: none;
+}
+
+body.findings-page .case-detail p {
+  max-width: 74ch;
+  color: #e9ecff;
 }
 
 .case-detail p + p {
@@ -1133,19 +1187,26 @@ section:nth-child(even) {
 
 .case-list {
   list-style: none;
-  margin: 1rem 0;
-  padding-left: 1.5rem;
-  max-width: 70ch;
+  margin: 0.85rem 0 0;
+  padding-left: 1.15rem;
+  max-width: none;
+}
+
+body.findings-page .case-list {
+  margin-top: 0.4rem;
 }
 
 .case-list li {
   color: var(--text-light);
-  margin-bottom: 0.85rem;
-  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.35rem;
   position: relative;
-  font-size: 0.98rem;
-  line-height: 1.85;
-  text-wrap: pretty;
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+
+body.findings-page .case-list li {
+  max-width: 62ch;
 }
 
 .case-detail a {
@@ -1174,13 +1235,61 @@ section:nth-child(even) {
 .video-embed {
   position: relative;
   width: 100%;
-  max-width: 720px;
+  max-width: 760px;
   aspect-ratio: 16 / 9;
-  margin: 1rem auto 1.25rem;
+  margin: 0.9rem auto 1rem;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border-color);
   background: #000;
+}
+
+body.findings-page .video-embed,
+body.findings-page .reddit-embed {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+body.findings-page .clip-analysis {
+  margin-top: 0.35rem;
+  padding: 1rem 1.1rem;
+  background: rgba(126, 230, 255, 0.06);
+  border: 1px solid rgba(126, 230, 255, 0.22);
+  border-left: 3px solid var(--accent-light);
+  border-radius: 8px;
+}
+
+body.findings-page .clip-analysis h5 {
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+body.findings-page .clip-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body.findings-page .clip-points li {
+  margin: 0 0 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.65;
+  color: #e9ecff;
+}
+
+body.findings-page .clip-points li:last-child {
+  margin-bottom: 0;
+}
+
+body.findings-page .clip-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
 }
 
 .video-embed iframe {
@@ -1193,7 +1302,7 @@ section:nth-child(even) {
 
 .reddit-embed {
   width: 100%;
-  margin: 1rem 0 1.25rem;
+  margin: 0.9rem 0 1rem;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border-color);
@@ -1203,8 +1312,55 @@ section:nth-child(even) {
 .reddit-embed iframe {
   display: block;
   width: 100%;
-  min-height: 460px;
+  min-height: 420px;
   border: 0;
+}
+
+@media (min-width: 980px) {
+  .case-study-card {
+    padding: 2.2rem;
+  }
+
+  .case-detail {
+    padding: 1.25rem 1.35rem;
+  }
+
+  .case-list {
+    columns: 2;
+    column-gap: 2rem;
+  }
+
+  .case-list li {
+    break-inside: avoid;
+  }
+}
+
+@media (max-width: 900px) {
+  .case-study-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .show-banner {
+    height: 220px;
+  }
+
+  .case-study-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .case-list {
+    columns: 1;
+  }
+
+  body.findings-page .case-detail p,
+  body.findings-page .case-list li {
+    max-width: none;
+  }
+
+  body.findings-page .clip-analysis {
+    padding: 0.9rem;
+  }
 }
 
 .data-visualization {
