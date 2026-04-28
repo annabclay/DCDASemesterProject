@@ -337,7 +337,7 @@ section:nth-child(even) p, section:nth-child(even) li, section:nth-child(even) s
 
 .sections-preview h2 {
   margin-bottom: 3rem;
-  color: #ffffff;
+  color: #1a1a1a !important;
 }
 
 .sections-preview h1, .sections-preview h2, .sections-preview h3, .sections-preview h4,
