@@ -201,15 +201,15 @@ body, .hero, header, section, .preview-card, .case-study-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #121634;
+  background: var(--primary-color);
   position: relative;
   overflow: hidden;
-  color: #ffffff;
+  color: var(--text-light);
 }
 
 .hero h1, .hero h2, .hero h3, .hero h4,
 .hero p, .hero li, .hero strong {
-  color: #ffffff;
+  color: var(--text-light);
 }
 
 .hero::before {
@@ -219,9 +219,9 @@ body, .hero, header, section, .preview-card, .case-study-card {
   right: -10%;
   width: 420px;
   height: 420px;
-  border: 1px solid rgba(126, 230, 255, 0.25);
+  border: 1px solid rgba(107, 70, 255, 0.16);
   border-radius: 50%;
-  box-shadow: 0 0 120px rgba(200, 139, 255, 0.28);
+  box-shadow: 0 0 120px rgba(107, 70, 255, 0.1);
   animation: pulse-glow 8s ease-in-out infinite;
 }
 
@@ -256,40 +256,41 @@ body, .hero, header, section, .preview-card, .case-study-card {
 .hero-title {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: var(--text-light);
   font-weight: 800;
   letter-spacing: -0.02em;
-  text-shadow: 0 0 22px rgba(107, 70, 255, 0.12);
+  text-shadow: none;
 }
 
 .hero-subtitle {
   font-size: 1.4rem;
-  color: #f0f0f0;
+  color: var(--text-muted);
   margin-bottom: 2rem;
   font-weight: 300;
 }
 
 .hero-question {
   font-size: 1.1rem;
-  color: #ffffff;
+  color: var(--text-light);
   font-weight: 600;
   font-style: italic;
 }
 
 .research-box {
-  background: rgba(var(--accent-rgb), 0.14);
+  background: #ffffff;
   border-left: 4px solid var(--accent-color);
   padding: 1.5rem;
-  border-radius: 4px;
+  border-radius: 8px;
   max-width: 700px;
   margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(15, 18, 38, 0.08);
 }
 
 .research-label {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: var(--accent-color);
   margin-bottom: 0.5rem;
 }
 
@@ -331,18 +332,18 @@ section:nth-child(even) p, section:nth-child(even) li, section:nth-child(even) s
 
 .sections-preview {
   padding: 4rem 0;
-  background: #121634;
-  color: #ffffff;
+  background: var(--surface-alt);
+  color: var(--text-light);
 }
 
 .sections-preview h2 {
   margin-bottom: 3rem;
-  color: #1a1a1a !important;
+  color: var(--text-light) !important;
 }
 
 .sections-preview h1, .sections-preview h2, .sections-preview h3, .sections-preview h4,
 .sections-preview p, .sections-preview li, .sections-preview strong {
-  color: #ffffff;
+  color: var(--text-light);
 }
 
 .preview-grid {
