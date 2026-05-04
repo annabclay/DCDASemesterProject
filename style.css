@@ -512,6 +512,33 @@ p, li { line-height: 1.6; }
   color: var(--accent-light);
 }
 
+/* Meet the Team caption and photo styles */
+.meet-team-caption {
+  font-size: 1.15rem;
+  margin: 0.8rem 0 0.6rem 0;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.hero-group-photo {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero-group-photo img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15,18,38,0.06);
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .meet-team-caption { font-size: 1rem; }
+  .hero-group-photo img { max-width: 320px; }
+}
+
 /* ============================================
    METHODOLOGY SECTION
    ============================================ */
@@ -1880,4 +1907,31 @@ body.findings-page .clip-points li::before {
   .takeaway-box {
     padding: 1.5rem;
   }
+}
+
+/* Center and size adjustments for literature page top image */
+.page-top-image {
+  text-align: center;
+  margin: 0.6rem 0 1rem 0;
+}
+
+.page-top-image img.page-illustration {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  border-radius: 6px;
+}
+
+@media (max-width: 480px) {
+  .page-top-image img.page-illustration { max-width: 220px; }
+}
+
+/* Slightly larger top image for Conclusion page */
+.page-hero-conclusion .page-top-image img.page-illustration {
+  max-width: 340px;
+}
+
+@media (max-width: 480px) {
+  .page-hero-conclusion .page-top-image img.page-illustration { max-width: 260px; }
 }
