@@ -1333,6 +1333,8 @@ body.findings-page .case-list li {
   color: var(--accent-light);
   text-decoration: underline;
   text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .case-list a:hover,
@@ -1739,6 +1741,7 @@ body.findings-page .clip-points li::before {
   margin-left: 1.5rem;
   text-indent: -1.5rem;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
 .citation-list li::before {
